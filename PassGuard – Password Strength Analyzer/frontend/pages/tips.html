@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tips – PassGuard</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="bg-mesh">
+    <div class="mesh-orb orb-1"></div>
+    <div class="mesh-orb orb-2"></div>
+    <div class="mesh-orb orb-3"></div>
+  </div>
+
+  <nav class="navbar">
+    <a href="../index.html" class="nav-logo">
+      <span class="logo-icon">🔐</span>
+      <span class="logo-text">PassGuard</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-link">Checker</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="tips.html" class="nav-link active">Tips</a>
+    </div>
+    <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+      <span class="theme-icon">☀️</span>
+    </button>
+  </nav>
+
+  <main class="page-container">
+
+    <div class="page-hero">
+      <span class="page-tag">// Security Tips</span>
+      <h1 class="page-title">Create passwords<br/><span class="title-accent">attackers hate</span></h1>
+      <p class="page-desc">
+        Practical, proven strategies backed by NIST, OWASP, and leading cybersecurity
+        researchers. Apply these principles and your accounts become dramatically
+        harder to compromise.
+      </p>
+    </div>
+
+    <div class="content-grid">
+
+      <div class="content-card" style="animation-delay:0.05s">
+        <div class="content-card-header">
+          <div class="card-icon icon-blue">📏</div>
+          <h3>Length is King</h3>
+        </div>
+        <p>Every additional character multiplies the search space exponentially for a brute-force attacker.</p>
+        <div class="tip-list">
+          <div class="tip-item"><span class="tip-bullet">→</span><span>Aim for 16+ characters as your baseline</span></div>
+          <div class="tip-item"><span class="tip-bullet">→</span><span>A 20-character passphrase is stronger than an 8-char complex password</span></div>
+          <div class="tip-item"><span class="tip-bullet">→</span><span>Never go below 12 characters for any account that matters</span></div>
+        </div>
+      </div>
+
+      <div class="content-card" style="animation-delay:0.1s">
+        <div class="content-card-header">
+          <div class="card-icon icon-violet">🎲</div>
+          <h3>Use a Passphrase</h3>
+        </div>
+        <p>Passphrases combine multiple random words into something long but memorable.</p>
+        <div class="tip-list">
+          <div class="tip-item"><span class="tip-bullet">→</span><span><code>correct-horse-battery-staple</code> is far stronger than <code>P@ss1!</code></span></div>
+          <div class="tip-item"><span class="tip-bullet">→</span><span>Use 4–6 completely random words (avoid personal words)</span></div>
+          <div class="tip-item"><span class="tip-bullet">→</span><span>Sprinkle numbers and symbols between words for extra entropy</span></div>
+        </div>
+      </div>
+
+      <div class="content-card" style="animation-delay:0.15s">
+        <div class="content-card-header">
+          <div class="card-icon icon-green">🔁</div>
+          <h3>Never Reuse Passwords</h3>
+        </div>
+        <p>Credential stuffing attacks test billions of leaked credentials against other services automatically.</p>
+        <div class="tip-list">
+          <div class="tip-item"><span class="tip-bullet">→</span><span>Every account must have a unique password — no exceptions</span></div>
+          <div class="tip-item"><span class="tip-bullet">→</span><span>Use a password manager (Bitwarden, 1Password, KeePassXC) to remember them all</span></div>
+          <div class="tip-item"><span class="tip-bullet">→</span><span>Check haveibeenpwned.com regularly to see if your email was in a breach</span></div>
+        </div>
+      </div>
+
+      <div class="content-card" style="animation-delay:0.2s">
+        <div class="content-card-header">
+          <div class="card-icon icon-amber">🧩</div>
+          <h3>Mix Character Classes</h3>
+        </div>
+        <p>Using all four character classes forces attackers to search a vastly larger space.</p>
+        <div class="tip-list">
+          <div class="tip-item"><span class="tip-bullet">→</span><span>Uppercase: A–Z (26 options per character)</span></div>
+          <div class="tip-item"><span class="tip-bullet">→</span><span>Lowercase: a–z (26 options per character)</span></div>
+          <div class="tip-item"><span class="tip-bullet">→</span><span>Numbers: 0–9 (10 options)</span></div>
+          <div class="tip-item"><span class="tip-bullet">→</span><span>Special characters: ~30 symbols on a standard keyboard</span></div>
+        </div>
+      </div>
+
+      <div class="content-card" style="animation-delay:0.25s">
+        <div class="content-card-header">
+          <div class="card-icon icon-rose">🚫</div>
+          <h3>What to Avoid</h3>
+        </div>
+        <p>These patterns are the first things dictionary and rule-based attacks try:</p>
+        <div class="tip-list">
+          <div class="tip-item"><span class="tip-bullet">✗</span><span>Personal info: names, birthdays, pet names, phone numbers</span></div>
+          <div class="tip-item"><span class="tip-bullet">✗</span><span>Common substitutions: <code>p@ssw0rd</code>, <code>S3cur!ty</code></span></div>
+          <div class="tip-item"><span class="tip-bullet">✗</span><span>Keyboard patterns: <code>qwerty</code>, <code>123456</code>, <code>asdfgh</code></span></div>
+          <div class="tip-item"><span class="tip-bullet">✗</span><span>Dictionary words on their own, even in other languages</span></div>
+          <div class="tip-item"><span class="tip-bullet">✗</span><span>Repeated characters: <code>aaaa</code>, <code>1111</code></span></div>
+        </div>
+      </div>
+
+      <div class="content-card" style="animation-delay:0.3s">
+        <div class="content-card-header">
+          <div class="card-icon icon-teal">🔐</div>
+          <h3>Enable Two-Factor Authentication</h3>
+        </div>
+        <p>Even a perfect password can be phished or leaked. 2FA adds a second barrier.</p>
+        <div class="tip-list">
+          <div class="tip-item"><span class="tip-bullet">→</span><span>Use an authenticator app (Authy, Google Authenticator) over SMS when possible</span></div>
+          <div class="tip-item"><span class="tip-bullet">→</span><span>Hardware keys (YubiKey) offer the strongest protection against phishing</span></div>
+          <div class="tip-item"><span class="tip-bullet">→</span><span>Enable 2FA on email, banking, and social accounts first — they're highest value</span></div>
+        </div>
+      </div>
+
+      <div class="content-card" style="animation-delay:0.35s">
+        <div class="content-card-header">
+          <div class="card-icon icon-blue">🗄️</div>
+          <h3>Use a Password Manager</h3>
+        </div>
+        <p>The only practical way to have unique, complex passwords for every site.</p>
+        <div class="tip-list">
+          <div class="tip-item"><span class="tip-bullet">→</span><span><strong>Bitwarden</strong> – open source, free tier, audited, cross-platform</span></div>
+          <div class="tip-item"><span class="tip-bullet">→</span><span><strong>1Password</strong> – polished UI, family sharing, Travel Mode</span></div>
+          <div class="tip-item"><span class="tip-bullet">→</span><span><strong>KeePassXC</strong> – fully offline, maximum control, zero cloud dependency</span></div>
+          <div class="tip-item"><span class="tip-bullet">→</span><span>Your master password for the manager should be your strongest password ever</span></div>
+        </div>
+      </div>
+
+      <div class="content-card" style="animation-delay:0.4s">
+        <div class="content-card-header">
+          <div class="card-icon icon-amber">🔄</div>
+          <h3>When to Change Your Password</h3>
+        </div>
+        <p>Modern NIST guidance no longer recommends arbitrary periodic changes — they cause weaker choices.</p>
+        <div class="tip-list">
+          <div class="tip-item"><span class="tip-bullet">→</span><span>Change immediately if you suspect compromise or receive a breach notification</span></div>
+          <div class="tip-item"><span class="tip-bullet">→</span><span>Change after a service you use announces a data breach</span></div>
+          <div class="tip-item"><span class="tip-bullet">→</span><span>Do NOT change on a fixed schedule if the password is strong and unique</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <div class="cta-title">Apply what you've learned 🚀</div>
+      <p class="cta-desc">Test your password or generate a secure one — right now.</p>
+      <a href="../index.html" class="btn-cta">Open Password Checker →</a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 PassGuard · No passwords stored · Built for portfolio purposes</p>
+    <div class="footer-links">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="tips.html">Tips</a>
+    </div>
+  </footer>
+
+  <script>
+    const saved = localStorage.getItem('passguard-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', saved);
+    const ti = document.querySelector('.theme-icon');
+    ti.textContent = saved === 'dark' ? '☀️' : '🌙';
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      const cur = document.documentElement.getAttribute('data-theme');
+      const nxt = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', nxt);
+      ti.textContent = nxt === 'dark' ? '☀️' : '🌙';
+      localStorage.setItem('passguard-theme', nxt);
+    });
+  </script>
+</body>
+</html>

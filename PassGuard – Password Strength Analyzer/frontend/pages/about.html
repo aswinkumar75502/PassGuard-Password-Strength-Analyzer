@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About – PassGuard</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="bg-mesh">
+    <div class="mesh-orb orb-1"></div>
+    <div class="mesh-orb orb-2"></div>
+    <div class="mesh-orb orb-3"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="../index.html" class="nav-logo">
+      <span class="logo-icon">🔐</span>
+      <span class="logo-text">PassGuard</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-link">Checker</a>
+      <a href="about.html" class="nav-link active">About</a>
+      <a href="tips.html" class="nav-link">Tips</a>
+    </div>
+    <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+      <span class="theme-icon">☀️</span>
+    </button>
+  </nav>
+
+  <main class="page-container">
+
+    <!-- HERO -->
+    <div class="page-hero">
+      <span class="page-tag">// About PassGuard</span>
+      <h1 class="page-title">Why password<br/><span class="title-accent">security matters</span></h1>
+      <p class="page-desc">
+        In a world of persistent digital threats, your password is often the only
+        barrier between attackers and your sensitive data. PassGuard helps you
+        understand and improve your defences — instantly, privately.
+      </p>
+    </div>
+
+    <!-- CONTENT CARDS -->
+    <div class="content-grid">
+
+      <div class="content-card" style="animation-delay:0.1s">
+        <div class="content-card-header">
+          <div class="card-icon icon-rose">🚨</div>
+          <h3>The Scale of the Problem</h3>
+        </div>
+        <p>
+          Over <strong>23 billion</strong> credential pairs were exposed in data breaches in 2023 alone.
+          Credential stuffing, brute-force attacks, and dictionary attacks are fully automated and
+          can test millions of passwords per second against stolen hashes.
+          A weak 6-character password can be cracked in under a second with modern GPUs.
+        </p>
+      </div>
+
+      <div class="content-card" style="animation-delay:0.2s">
+        <div class="content-card-header">
+          <div class="card-icon icon-blue">🔬</div>
+          <h3>How PassGuard Analyzes Your Password</h3>
+        </div>
+        <p>
+          PassGuard evaluates five core criteria — length, uppercase, lowercase, numbers,
+          and special characters — and assigns a weighted score from 0–100%. The analysis
+          runs <em>entirely in your browser</em>. Your password is never transmitted, logged,
+          or stored anywhere. We use the <code>window.crypto</code> API for secure random
+          generation, not <code>Math.random()</code>.
+        </p>
+      </div>
+
+      <div class="content-card" style="animation-delay:0.3s">
+        <div class="content-card-header">
+          <div class="card-icon icon-green">🛡️</div>
+          <h3>What Makes a Password "Excellent"?</h3>
+        </div>
+        <p>
+          NIST SP 800-63B (2023) recommends at least 15 characters, mixing character
+          classes, and avoiding dictionary words or predictable substitutions (like
+          <code>p@ssw0rd</code>). PassGuard awards full marks for passwords that satisfy
+          all five rules <em>and</em> exceed 16 characters — matching industry best practice.
+        </p>
+      </div>
+
+      <div class="content-card" style="animation-delay:0.4s">
+        <div class="content-card-header">
+          <div class="card-icon icon-violet">🏗️</div>
+          <h3>Tech Stack</h3>
+        </div>
+        <p>
+          <strong>Frontend:</strong> Pure HTML5, CSS3 (glassmorphism, CSS custom properties,
+          keyframe animations), and Vanilla JavaScript — no frameworks, no dependencies.<br/><br/>
+          <strong>Backend (optional):</strong> Python Flask REST API for server-side scoring
+          and demo logging. Run with <code>python app.py</code> after installing requirements.<br/><br/>
+          <strong>Fonts:</strong> Syne (display), DM Mono, DM Sans — all via Google Fonts.
+        </p>
+      </div>
+
+      <div class="content-card" style="animation-delay:0.5s">
+        <div class="content-card-header">
+          <div class="card-icon icon-amber">⚖️</div>
+          <h3>Privacy Commitment</h3>
+        </div>
+        <p>
+          PassGuard operates on a strict zero-knowledge principle for the frontend.
+          No analytics SDK, no telemetry, no third-party scripts that could intercept
+          keystrokes. The optional backend stores only an anonymised strength score and
+          timestamp — never the password itself — and is disabled by default.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <div class="cta-title">Ready to test your password? 🔐</div>
+      <p class="cta-desc">Run a free, instant, private analysis right now.</p>
+      <a href="../index.html" class="btn-cta">Go to Checker →</a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 PassGuard · No passwords stored · Built for portfolio purposes</p>
+    <div class="footer-links">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="tips.html">Tips</a>
+    </div>
+  </footer>
+
+  <script>
+    // Minimal theme script for sub-pages
+    const saved = localStorage.getItem('passguard-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', saved);
+    const ti = document.querySelector('.theme-icon');
+    ti.textContent = saved === 'dark' ? '☀️' : '🌙';
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      const cur = document.documentElement.getAttribute('data-theme');
+      const nxt = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', nxt);
+      ti.textContent = nxt === 'dark' ? '☀️' : '🌙';
+      localStorage.setItem('passguard-theme', nxt);
+    });
+  </script>
+</body>
+</html>

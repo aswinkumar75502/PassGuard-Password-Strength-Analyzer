@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PassGuard – Password Strength Analyzer</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- ─── BACKGROUND MESH ─── -->
+  <div class="bg-mesh">
+    <div class="mesh-orb orb-1"></div>
+    <div class="mesh-orb orb-2"></div>
+    <div class="mesh-orb orb-3"></div>
+  </div>
+
+  <!-- ─── NAVBAR ─── -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">🔐</span>
+      <span class="logo-text">PassGuard</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link active">Checker</a>
+      <a href="pages/about.html" class="nav-link">About</a>
+      <a href="pages/tips.html" class="nav-link">Tips</a>
+    </div>
+    <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+      <span class="theme-icon">☀️</span>
+    </button>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <main class="main-container">
+    <section class="hero">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Real-time Analysis Engine
+      </div>
+      <h1 class="hero-title">
+        How <span class="title-accent">secure</span><br/>
+        is your password?
+      </h1>
+      <p class="hero-subtitle">
+        Analyze, generate, and perfect your passwords with military-grade criteria.
+        Zero data stored. 100% client-side.
+      </p>
+    </section>
+
+    <!-- ─── CHECKER CARD ─── -->
+    <div class="checker-card">
+
+      <!-- Score Ring -->
+      <div class="score-section">
+        <div class="score-ring-wrap">
+          <svg class="score-ring" viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="52"/>
+            <circle class="ring-fill" id="ringFill" cx="60" cy="60" r="52"
+              stroke-dasharray="326.73"
+              stroke-dashoffset="326.73"/>
+          </svg>
+          <div class="score-center">
+            <span class="score-number" id="scoreNumber">0</span>
+            <span class="score-label">%</span>
+          </div>
+        </div>
+        <div class="score-meta">
+          <div class="strength-badge" id="strengthBadge">
+            <span class="badge-emoji" id="badgeEmoji">🔒</span>
+            <span class="badge-text" id="badgeText">Enter password</span>
+          </div>
+          <div class="strength-levels">
+            <div class="level-dot" data-level="1" title="Weak"></div>
+            <div class="level-dot" data-level="2" title="Medium"></div>
+            <div class="level-dot" data-level="3" title="Strong"></div>
+            <div class="level-dot" data-level="4" title="Excellent"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Area -->
+      <div class="input-section">
+        <div class="input-group">
+          <label class="input-label">Password</label>
+          <div class="input-wrapper">
+            <span class="input-icon">🔑</span>
+            <input
+              type="password"
+              id="passwordInput"
+              class="password-input"
+              placeholder="Type or paste your password…"
+              autocomplete="new-password"
+              spellcheck="false"
+            />
+            <button class="toggle-btn" id="toggleBtn" title="Show/hide password">
+              <span id="eyeIcon">👁️</span>
+            </button>
+          </div>
+          <!-- Strength Bar -->
+          <div class="strength-bar-track">
+            <div class="strength-bar-fill" id="strengthBar"></div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-row">
+          <button class="btn btn-generate" id="generateBtn" title="Generate a secure password">
+            ⚡ Generate
+          </button>
+          <button class="btn btn-copy" id="copyBtn" title="Copy password to clipboard">
+            📋 Copy
+          </button>
+          <button class="btn btn-clear" id="clearBtn" title="Clear field">
+            🗑️ Clear
+          </button>
+        </div>
+      </div>
+
+      <!-- Rules Checklist -->
+      <div class="rules-section">
+        <h3 class="rules-title">
+          Validation Checklist
+          <span class="tooltip-wrap" title="All rules must pass for an excellent password">ℹ️</span>
+        </h3>
+        <div class="rules-grid">
+          <div class="rule-item" id="rule-length">
+            <span class="rule-icon">⭕</span>
+            <span class="rule-text">Minimum 8 characters</span>
+          </div>
+          <div class="rule-item" id="rule-upper">
+            <span class="rule-icon">⭕</span>
+            <span class="rule-text">Uppercase letter (A–Z)</span>
+          </div>
+          <div class="rule-item" id="rule-lower">
+            <span class="rule-icon">⭕</span>
+            <span class="rule-text">Lowercase letter (a–z)</span>
+          </div>
+          <div class="rule-item" id="rule-number">
+            <span class="rule-icon">⭕</span>
+            <span class="rule-text">Number (0–9)</span>
+          </div>
+          <div class="rule-item" id="rule-special">
+            <span class="rule-icon">⭕</span>
+            <span class="rule-text">Special character (!@#$%^&amp;*)</span>
+          </div>
+          <div class="rule-item" id="rule-length16">
+            <span class="rule-icon">⭕</span>
+            <span class="rule-text">16+ characters (bonus)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feedback Panel -->
+      <div class="feedback-section" id="feedbackSection">
+        <h3 class="feedback-title">Smart Feedback</h3>
+        <div class="feedback-list" id="feedbackList">
+          <p class="feedback-placeholder">Start typing to get personalized suggestions…</p>
+        </div>
+      </div>
+
+    </div><!-- /checker-card -->
+
+    <!-- ─── STATS ROW ─── -->
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-value">256-bit</div>
+        <div class="stat-desc">Analysis Engine</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">0 KB</div>
+        <div class="stat-desc">Data Transmitted</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">100%</div>
+        <div class="stat-desc">Client-Side Privacy</div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <p>© 2025 PassGuard · Built for portfolio & learning purposes · No passwords stored</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="pages/about.html">About</a>
+      <a href="pages/tips.html">Tips</a>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/checker.js"></script>
+</body>
+</html>
